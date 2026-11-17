@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3eee7">
+<meta name="description" content="Find Your Mood, Define Your Style. 패션 스타일과 코디, 컬러 조합을 발견하는 패션 큐레이션 아카이브.">
+<title>FASHION MOOD ARCHIVE</title>
+<style>
+:root{--paper:#f3eee7;--paper2:#e9e0d5;--ink:#211d19;--muted:#756c63;--line:#cfc4b7;--brown:#806b57;--white:#fffdf9;--serif:Georgia,"Times New Roman",serif;--sans:Arial,"Noto Sans KR",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400}button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 5.2vw;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;background:rgba(243,238,231,.94);backdrop-filter:blur(12px)}.brand{font-size:17px;line-height:1.02;letter-spacing:.04em;font-weight:700;max-width:190px}.nav{display:flex;gap:30px;align-items:center}.nav a{font-size:12px;letter-spacing:.08em;color:#554d45;transition:color .2s}.nav a:hover,.nav a.active{color:#000}.menu-toggle{display:none;background:none;border:0;font-size:24px}.hero{min-height:590px;display:grid;grid-template-columns:1fr 1.05fr;align-items:center;padding:55px 7vw 70px;gap:4vw;overflow:hidden}.eyebrow,.section-kicker{font-size:10px;letter-spacing:.26em;color:var(--muted);text-transform:uppercase}.hero h1{font-size:clamp(46px,7.2vw,100px);line-height:.91;letter-spacing:-.065em;font-weight:400;margin:26px 0 24px}.hero h1 span{font-family:var(--serif);font-style:italic;font-weight:400}.hero-copy{font-size:17px;color:#62594f;margin:0 0 32px;letter-spacing:.02em}.primary{border:0;background:var(--ink);color:var(--white);padding:16px 27px;letter-spacing:.1em;font-size:11px;transition:transform .2s,background .2s}.primary:hover{background:var(--brown);transform:translateY(-2px)}.hero-image{height:480px;position:relative;background:#d6c8b9;overflow:hidden}.hero-image img{width:100%;height:100%;object-fit:cover;display:block}.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,20,10,.08),transparent 45%);pointer-events:none}.hero-note{position:absolute;bottom:22px;right:22px;color:white;font-size:10px;letter-spacing:.18em;z-index:1;text-shadow:0 1px 8px #333}
+.section{padding:92px 7vw}.section-head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:30px;gap:20px}.section-head h2{font-size:clamp(29px,4vw,48px);font-weight:400;letter-spacing:-.05em;margin:8px 0 0}.section-head p{font-size:12px;color:var(--muted);margin:0;max-width:330px;line-height:1.7}.style-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.style-card{border:0;padding:0;background:transparent;text-align:left;min-width:0;display:block}.style-card .photo{height:290px;overflow:hidden;background:var(--paper2);position:relative}.style-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s}.style-card:hover img{transform:scale(1.05)}.style-card .num{position:absolute;top:12px;left:12px;color:white;font-size:10px;letter-spacing:.1em;text-shadow:0 1px 6px #333}.style-card h3{font-size:15px;font-weight:500;margin:16px 0 6px;letter-spacing:.04em}.style-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.6}.arrow-link{font-size:11px;letter-spacing:.12em;border-bottom:1px solid var(--ink);padding-bottom:5px;white-space:nowrap}
+.dark-band{background:#27231f;color:var(--paper);padding:70px 7vw;display:flex;justify-content:space-between;align-items:center;gap:30px}.dark-band p{font-family:var(--serif);font-size:clamp(26px,4vw,48px);font-style:italic;margin:0}.dark-band span{font-size:10px;letter-spacing:.2em;color:#c5b9ac}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}.filter{border:1px solid var(--line);background:transparent;padding:9px 15px;font-size:10px;letter-spacing:.1em;color:var(--muted)}.filter.active,.filter:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}.outfit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 16px}.outfit-card{min-width:0}.outfit-photo{height:340px;background:var(--paper2);overflow:hidden}.outfit-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.outfit-card:hover img{transform:scale(1.025)}.outfit-meta{padding:15px 2px 0}.outfit-meta .tag{font-size:9px;letter-spacing:.18em;color:var(--brown)}.outfit-meta h3{font-size:17px;font-weight:400;margin:8px 0}.outfit-meta p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}.items{font-size:10px;color:#4d453e;margin-top:9px}
+.color-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.color-card{border:1px solid var(--line);padding:10px;background:rgba(255,255,255,.22)}.swatches{height:150px;display:flex;overflow:hidden}.swatches span{flex:1}.color-card h3{font-size:12px;letter-spacing:.06em;font-weight:500;margin:15px 0 8px}.hexes{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:9px;letter-spacing:.05em}.color-card p{font-size:10px;color:#62594f;line-height:1.6;margin:12px 0 3px}
+.tips-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.tip{border-top:1px solid var(--ink);padding:17px 4px 0}.tip .n{font-family:var(--serif);font-size:35px;color:#9a8774}.tip h3{font-size:14px;font-weight:500;line-height:1.5;margin:13px 0 9px}.tip p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.closing{text-align:center;padding:105px 20px 115px;background:var(--paper2)}.closing .quote{font-family:var(--serif);font-size:clamp(34px,6vw,70px);font-style:italic;margin:0 0 18px}.closing p{font-size:13px;color:#64594e;letter-spacing:.03em}
+footer{padding:30px 7vw;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:9px;letter-spacing:.12em;color:var(--muted)}.backtop{border:1px solid var(--line);padding:9px 12px;background:transparent;font-size:10px}
+.empty{padding:50px;text-align:center;color:var(--muted)}
+@media(max-width:900px){.nav{gap:15px}.nav a{font-size:10px}.style-grid{grid-template-columns:repeat(3,1fr)}.style-card .photo{height:250px}.color-grid{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:repeat(3,1fr)}.hero{min-height:500px}.hero-image{height:400px}}
+@media(max-width:640px){html{scroll-padding-top:70px}.topbar{height:68px;padding:0 5vw}.brand{font-size:14px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:67px;left:0;right:0;background:var(--paper);padding:20px 6vw 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}.nav.open{display:flex}.nav a{font-size:12px}.hero{grid-template-columns:1fr;padding:48px 6vw 55px;gap:28px}.hero h1{font-size:clamp(53px,15vw,80px);margin:18px 0}.hero-copy{font-size:14px}.hero-image{height:370px;grid-row:1}.section{padding:65px 6vw}.section-head{align-items:flex-start;flex-direction:column}.section-head h2{font-size:34px}.style-grid{grid-template-columns:repeat(2,1fr);gap:24px 12px}.style-card .photo{height:235px}.style-card:last-child{grid-column:span 2}.style-card:last-child .photo{height:280px}.outfit-grid{grid-template-columns:repeat(2,1fr);gap:25px 11px}.outfit-photo{height:250px}.outfit-meta h3{font-size:14px}.color-grid{grid-template-columns:repeat(2,1fr);gap:10px}.swatches{height:115px}.tips-grid{grid-template-columns:repeat(2,1fr);gap:26px 12px}.dark-band{padding:50px 6vw;display:block}.dark-band span{display:block;margin-top:15px}.closing{padding:78px 20px}.closing p{line-height:1.8}footer{padding:25px 6vw;align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="FASHION MOOD ARCHIVE 홈">FASHION MOOD<br>ARCHIVE</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  <nav class="nav" id="nav">
+    <a href="#home" class="active">HOME</a><a href="#styles">STYLE ARCHIVE</a><a href="#outfits">OUTFIT INSPIRATION</a><a href="#colors">COLOR COMBINATION</a><a href="#tips">STYLING TIPS</a>
+  </nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">A PERSONAL FASHION JOURNAL · VOL. 01</div>
+    <h1>FASHION<br><span>MOOD</span><br>ARCHIVE</h1>
+    <p class="hero-copy">Find Your Mood, Define Your Style.</p>
+    <button class="primary" onclick="document.querySelector('#styles').scrollIntoView({behavior:'smooth'})">시작하기　↗</button>
+  </div>
+  <div class="hero-image"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=85" alt="뉴트럴 톤의 패션 에디토리얼 인물 사진" onerror="this.style.display='none'"><div class="hero-note">DRESS LIKE YOURSELF — 001</div></div>
+</section>
+
+<section class="section" id="styles">
+  <div class="section-head"><div><div class="section-kicker">01 / Discover your mood</div><h2>STYLE ARCHIVE</h2></div><p>다섯 가지 무드에서 나에게 어울리는 스타일을 발견해 보세요.</p></div>
+  <div class="style-grid" id="styleGrid"></div>
+</section>
+<div class="dark-band"><p>“Style is a way to say<br>who you are.”</p><span>AN ARCHIVE OF EVERYDAY EXPRESSION</span></div>
+
+<section class="section" id="outfits">
+  <div class="section-head"><div><div class="section-kicker">02 / Get inspired</div><h2>OUTFIT INSPIRATION</h2></div><p>마음에 드는 무드를 고르고, 아이템과 실루엣을 조합해 보세요.</p></div>
+  <div class="filters" id="filters" aria-label="스타일 필터"></div>
+  <div class="outfit-grid" id="outfitGrid"></div>
+</section>
+
+<section class="section" id="colors">
+  <div class="section-head"><div><div class="section-kicker">03 / Find your palette</div><h2>COLOR COMBINATION</h2></div><p>옷장 속 기본 아이템에 바로 적용하기 좋은 다섯 가지 컬러 조합.</p></div>
+  <div class="color-grid" id="colorGrid"></div>
+</section>
+
+<section class="section" id="tips">
+  <div class="section-head"><div><div class="section-kicker">04 / Small styling rules</div><h2>STYLING TIPS</h2></div><p>복잡한 공식보다 작은 기준부터. 오늘의 코디에 하나씩 적용해 보세요.</p></div>
+  <div class="tips-grid" id="tipsGrid"></div>
+</section>
+<section class="closing"><div class="section-kicker">MAKE IT YOURS</div><p class="quote">Your Style, Your Mood.</p><p>나만의 분위기를 찾고 나만의 스타일을 완성해 보세요.</p><button class="primary" onclick="document.querySelector('#styles').scrollIntoView({behavior:'smooth'})">스타일 다시 탐색하기　↗</button></section>
+</main>
+<footer><span>© 2026 FASHION MOOD ARCHIVE · A STYLE DISCOVERY JOURNAL<br><span style="display:inline-block;margin-top:9px;letter-spacing:.02em">본 웹사이트의 콘텐츠 및 디자인 제작 과정에 AI를 활용했습니다.</span></span><button class="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">BACK TO TOP ↑</button></footer>
+<script>
+const styles=[
+ {id:'CASUAL',ko:'캐주얼',desc:'편안하고 자연스러운 일상 패션',img:'photo-1523381210434-271e8be1f52b'},
+ {id:'STREET',ko:'스트릿',desc:'개성과 자유로운 분위기가 돋보이는 패션',img:'photo-1523398002811-999ca8dec234'},
+ {id:'MINIMAL',ko:'미니멀',desc:'단순한 디자인과 깔끔한 실루엣을 강조하는 패션',img:'photo-1483985988355-763728e1935b'},
+ {id:'VINTAGE',ko:'빈티지',desc:'빈티지한 색감과 독특한 아이템을 활용한 패션',img:'photo-1515886657613-9f3515b0c78f'},
+ {id:'FEMININE',ko:'페미닌',desc:'부드럽고 여성스러운 분위기를 표현하는 패션',img:'photo-1485230895905-ec40ba36b9bc'}
+];
+const outfits=[
+ ['CASUAL','01','Easy Weekend','화이트 셔츠 · 스트레이트 데님 · 스니커즈','편안한 기본 아이템에 데님으로 자연스러운 균형을 더해요.','photo-1529139574466-a303027c1d8b'],
+ ['CASUAL','02','Soft Layers','니트 가디건 · 코튼 팬츠 · 캔버스 백','톤을 맞춘 레이어드로 힘을 뺀 데일리 룩을 완성해요.','photo-1483985988355-763728e1935b'],
+ ['CASUAL','03','City Comfort','스트라이프 티셔츠 · 와이드 팬츠 · 로퍼','상의는 단정하게, 하의는 여유 있게 실루엣을 잡아보세요.','photo-1524504388940-b1c1722653e1'],
+ ['STREET','01','Urban Layer','오버핏 후디 · 카고 팬츠 · 볼캡','넉넉한 실루엣과 스포티한 아이템으로 자유롭게 연출해요.','photo-1523398002811-999ca8dec234'],
+ ['STREET','02','Denim Mix','그래픽 티셔츠 · 데님 · 볼드 스니커즈','그래픽 하나를 중심으로 색과 액세서리를 절제해요.','photo-1523381210434-271e8be1f52b'],
+ ['STREET','03','Monochrome Edge','블랙 재킷 · 와이드 팬츠 · 실버 액세서리','블랙 톤온톤에 질감 차이를 주면 깊이 있는 룩이 돼요.','photo-1515886657613-9f3515b0c78f'],
+ ['MINIMAL','01','Clean Lines','슬림 니트 · 테일러드 팬츠 · 미니멀 슈즈','군더더기 없는 라인과 정돈된 핏으로 세련미를 살려요.','photo-1539109136881-3be0616acf4b'],
+ ['MINIMAL','02','Quiet Neutral','베이지 코트 · 아이보리 탑 · 슬랙스','뉴트럴 컬러를 겹쳐 차분하고 정제된 분위기를 만들어요.','photo-1485230895905-ec40ba36b9bc'],
+ ['MINIMAL','03','Modern Balance','셔츠 · 롱 스커트 · 구조적인 백','장식은 줄이고 소재와 비율에 집중해 보세요.','photo-1525507119028-ed4c629a60a3'],
+ ['VINTAGE','01','Retro Denim','브라운 재킷 · 데님 · 레더 벨트','바랜 데님과 브라운 가죽 소품으로 빈티지 무드를 더해요.','photo-1521572163474-6864f9cf17ab'],
+ ['VINTAGE','02','Warm Texture','케이블 니트 · 코듀로이 팬츠 · 스웨이드 백','서로 다른 소재를 따뜻한 색감으로 연결해 보세요.','photo-1509631179647-0177331693ae'],
+ ['VINTAGE','03','Classic Mood','체크 재킷 · 터틀넥 · 로퍼','체크 패턴은 한 가지 아이템에만 사용해 부담을 줄여요.','photo-1490481651871-ab68de25d43d'],
+ ['FEMININE','01','Soft Silhouette','블라우스 · 플레어 스커트 · 메리제인','부드러운 소재와 자연스러운 A라인으로 우아함을 표현해요.','photo-1485968579580-b6d095142e6e'],
+ ['FEMININE','02','Romantic Detail','니트 탑 · 새틴 스커트 · 작은 숄더백','은은한 광택과 작은 디테일로 과하지 않은 포인트를 줘요.','photo-1503342217505-b0a15ec3261c'],
+ ['FEMININE','03','Modern Grace','테일러드 재킷 · 원피스 · 앵클 부츠','구조적인 아우터와 유연한 원피스로 균형을 맞춰요.','photo-1496747611176-843222e1e57c']
+];
+const palettes=[
+ {name:'BLACK + WHITE',hex:['#171717','#F7F5F0'],tip:'블랙 하의에 화이트 상의를 매치하면 가장 간결한 대비가 완성돼요.'},
+ {name:'BEIGE + BROWN',hex:['#D8C4A8','#6B4935'],tip:'밝은 베이지를 넓게 쓰고 브라운 가방이나 신발로 무게를 더해요.'},
+ {name:'NAVY + GRAY',hex:['#1D2C45','#A8A9A7'],tip:'네이비 재킷과 그레이 팬츠는 출근룩과 캠퍼스룩 모두에 좋아요.'},
+ {name:'IVORY + PASTEL PINK',hex:['#F2EBDD','#E8BFC4'],tip:'아이보리를 기본으로 두고 핑크는 가방이나 니트에 작게 활용해요.'},
+ {name:'KHAKI + CREAM',hex:['#73745A','#F0E7D4'],tip:'크림 컬러로 얼굴 주변을 밝히고 카키로 자연스러운 빈티지 무드를 더해요.'}
+];
+const tips=[
+ ['기본 아이템부터','흰 티셔츠, 셔츠, 데님처럼 자주 입는 아이템을 먼저 갖춰 보세요.'],
+ ['색상은 2~3가지','전체 색을 제한하면 서로 다른 아이템도 자연스럽게 어울려요.'],
+ ['실루엣의 균형','루즈한 상의에는 슬림한 하의, 와이드 팬츠에는 정돈된 상의를 매치해요.'],
+ ['액세서리 한 끗','가방, 벨트, 주얼리 중 하나만 포인트로 선택해도 충분해요.'],
+ ['나만의 무드 찾기','유행보다 자주 손이 가는 색과 핏을 기록하며 취향을 구체화해요.']
+];
+const photo=(id,w=900)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=82`;
+const styleGrid=document.querySelector('#styleGrid');
+styles.forEach((s,i)=>{const b=document.createElement('button');b.className='style-card';b.innerHTML=`<div class="photo"><img loading="lazy" src="${photo(s.img,700)}" alt="${s.id} 스타일 대표 이미지" onerror="this.style.display='none'"><span class="num">0${i+1} / 05</span></div><h3>${s.id}</h3><p>${s.desc}</p>`;b.addEventListener('click',()=>{setFilter(s.id);document.querySelector('#outfits').scrollIntoView({behavior:'smooth'})});styleGrid.append(b)});
+const filters=document.querySelector('#filters');let current='ALL';
+['ALL',...styles.map(s=>s.id)].forEach(id=>{const b=document.createElement('button');b.className='filter'+(id==='ALL'?' active':'');b.textContent=id;b.addEventListener('click',()=>setFilter(id));filters.append(b)});
+function setFilter(id){current=id;document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.textContent===id));renderOutfits()}
+function renderOutfits(){const grid=document.querySelector('#outfitGrid');grid.innerHTML='';outfits.filter(o=>current==='ALL'||o[0]===current).forEach(o=>{const card=document.createElement('article');card.className='outfit-card';card.innerHTML=`<div class="outfit-photo"><img loading="lazy" src="${photo(o[5],900)}" alt="${o[0]} ${o[2]} 코디 이미지" onerror="this.style.display='none'"></div><div class="outfit-meta"><div class="tag">${o[0]}　/　LOOK ${o[1]}</div><h3>${o[2]}</h3><p>${o[4]}</p><div class="items">KEY ITEMS　·　${o[3]}</div></div>`;grid.append(card)})}
+renderOutfits();
+const colorGrid=document.querySelector('#colorGrid');
+palettes.forEach(p=>{const card=document.createElement('article');card.className='color-card';card.innerHTML=`<div class="swatches">${p.hex.map(h=>`<span style="background:${h}" title="${h}"></span>`).join('')}</div><h3>${p.name}</h3><div class="hexes">${p.hex.map(h=>`<span>${h}</span>`).join('')}</div><p>${p.tip}</p>`;colorGrid.append(card)});
+const tipsGrid=document.querySelector('#tipsGrid');
+tips.forEach((t,i)=>{const card=document.createElement('article');card.className='tip';card.innerHTML=`<div class="n">0${i+1}</div><h3>${t[0]}</h3><p>${t[1]}</p>`;tipsGrid.append(card)});
+const toggle=document.querySelector('#menuToggle'),nav=document.querySelector('#nav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
+const sections=[...document.querySelectorAll('main section[id]')];const navLinks=[...nav.querySelectorAll('a')];
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>observer.observe(s))}
+</script>
+</body>
+</html>
